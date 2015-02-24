@@ -9,8 +9,11 @@ var http = require('http');
 /**
  * Get port from environment and store in Express.
  */
-
-var port = normalizePort(process.env.OPENSHIFT_NODEJS_PORT || '3000');
+var myPort = '3000';
+if( typeof process.env.OPENSHIFT_NODEJS_PORT !== 'undefined' ) {
+    myPort = '80';
+}
+var port = normalizePort(myPort);
 app.set('port', port);
 
 /**
