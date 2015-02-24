@@ -11,10 +11,16 @@ var http = require('http');
  */
 var myPort = '3000';
 if( typeof process.env.OPENSHIFT_NODEJS_PORT !== 'undefined' ) {
-    myPort = '80';
+    myPort = process.env.OPENSHIFT_NODEJS_PORT;
 }
 var port = normalizePort(myPort);
 app.set('port', port);
+
+var host = 'localhost';
+if( typeof process.env.OPENSHIFT_NODEJS_IP !== 'undefined' ) {
+    host = process.env.OPENSHIFT_NODEJS_IP;
+}
+app.set('host', host);
 
 /**
  * Create HTTP server.
@@ -26,7 +32,7 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(port, host);
 server.on('error', onError);
 server.on('listening', onListening);
 
