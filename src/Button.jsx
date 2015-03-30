@@ -4,8 +4,15 @@ var Button = React.createClass({
     },
     
     render: function() {
+    	var classes = "button center";
+
+    	if( this.props.className ) {
+    		classes = this.props.className + " " + classes;	
+    	}
+    	
+
         return (
-            <div className="button center" onClick={this.onClick}>{this.props.value}</div>
+            <div className={classes} onClick={this.onClick}>{this.props.value}</div>
         );
     }  
 });

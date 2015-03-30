@@ -36,17 +36,18 @@ var Keypad = React.createClass({displayName: "Keypad",
                         React.createElement(Button, {value: "9", onClick: this.onButtonClicked})
                     ), 
                     React.createElement("div", {className: "row"}, 
-                        React.createElement(Button, {value: " "}), 
-                        React.createElement(Button, {value: "0", onClick: this.onButtonClicked}), 
-                        React.createElement(Button, {value: "Backspace", onClick: this.onBackspaceClicked})
+                        React.createElement("div", {className: "keypad--cancel", onClick: this.onCancelClicked}, 
+                            "Cancel Transaction"
+                        ), 
+                        React.createElement(Button, {value: "0", onClick: this.onButtonClicked})
                     )
                 ), 
                 React.createElement("div", {className: "col keypad--ops"}, 
                     React.createElement("div", {className: "row ops"}, 
-                        React.createElement("div", {className: "button op center", id: "enter", onClick: this.onEnterClicked}, "Enter")
+                        React.createElement("div", {className: "button op center", id: "backspace", onClick: this.onBackspaceClicked}, "Backspace")
                     ), 
                     React.createElement("div", {className: "row ops"}, 
-                        React.createElement("div", {className: "button op center", id: "cancel", onClick: this.onCancelClicked}, "Cancel")
+                        React.createElement("div", {className: "button op center", id: "enter", onClick: this.onEnterClicked}, "Enter")
                     )
                 )
             )

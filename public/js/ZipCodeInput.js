@@ -42,12 +42,12 @@ var ZipCodeInput = React.createClass({displayName: "ZipCodeInput",
     render: function() {
         return (
             React.createElement("div", {className: "zipcodeinput"}, 
-                React.createElement(InputDisplay, {prompt: "Please enter zip code", size: "5", input: this.state.zipCode}), 
+                React.createElement(InputDisplay, {password: "false", prompt: "Enter your billing zip code", size: "5", input: this.state.zipCode}), 
                 React.createElement(Keypad, {onEnterClicked: this.onEnterClicked, 
                         onCancelClicked: this.onCancelClicked, 
                         onBackspaceClicked: this.onBackspaceClicked, 
                         onButtonClicked: this.onButtonClicked}), 
-                React.createElement(Alert, {ref: "myAlert", label: "Please enter 5 digit zip code"})
+                React.createElement(Alert, {ref: "myAlert", label: "Please enter 5 digit billing zip code"})
             )
         );
     }

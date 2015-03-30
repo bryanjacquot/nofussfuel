@@ -36,17 +36,18 @@ var Keypad = React.createClass({
                         <Button value="9" onClick={this.onButtonClicked}/>
                     </div>
                     <div className="row">
-                        <Button value="&nbsp;" />
+                        <div className="keypad--cancel" onClick={this.onCancelClicked}>
+                            Cancel Transaction
+                        </div>
                         <Button value="0" onClick={this.onButtonClicked}/>
-                        <Button value="Backspace" onClick={this.onBackspaceClicked}/>
                     </div>
                 </div>
                 <div className="col keypad--ops">
                     <div className="row ops">
-                        <div className="button op center" id="enter" onClick={this.onEnterClicked}>Enter</div>
+                        <div className="button op center" id="backspace" onClick={this.onBackspaceClicked}>Backspace</div>
                     </div>
                     <div className="row ops">
-                        <div className="button op center" id="cancel" onClick={this.onCancelClicked}>Cancel</div>
+                        <div className="button op center" id="enter" onClick={this.onEnterClicked}>Enter</div>
                     </div>
                 </div>
             </div>

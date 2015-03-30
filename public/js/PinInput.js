@@ -42,7 +42,7 @@ var PinInput = React.createClass({displayName: "PinInput",
     render: function() {
         return (
             React.createElement("div", {className: "pininput"}, 
-                React.createElement(InputDisplay, {prompt: "Please enter PIN", size: "4", input: this.state.pin}), 
+                React.createElement(InputDisplay, {password: "true", prompt: "Please enter debit card PIN", size: "4", input: this.state.pin}), 
                 React.createElement(Keypad, {onEnterClicked: this.onEnterClicked, 
                         onCancelClicked: this.onCancelClicked, 
                         onBackspaceClicked: this.onBackspaceClicked, 

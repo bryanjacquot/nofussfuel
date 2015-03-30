@@ -4,16 +4,19 @@ var GradeButton = React.createClass({
     },
     
     render: function() {
-        var classes = "grade center";
+        var button_classes = "grade center";
+        var price_classes = "gradeprice center"
         
         if( this.props.selected == "true" ) {
-            classes = "grade center grade--selected";
+            button_classes = "grade center grade--selected";
+            price_classes = "gradeprice center gradeprice--selected";
         }
         
         return (
-            <div className={classes} onClick={this.onClick}>
-                <div className="gradevalue center">{this.props.value}</div>
+            <div className={button_classes} onClick={this.onClick}>
                 <div className="gradelabel center">{this.props.label}</div>
+                <div className="gradevalue center">{this.props.value}</div>
+                <div className={price_classes}>{this.props.price}</div>
             </div>
         );
     }  

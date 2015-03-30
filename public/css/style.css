@@ -6,7 +6,10 @@ body {
     font-size: 21.6px;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: bold;
-    margin: 50px auto;
+    margin: 0px auto;
+    background-image: url("/img/hardware.png");
+    background-position: center top;
+    background-repeat: no-repeat;
     /* Prevent text selection */
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -18,10 +21,11 @@ body {
 
 #container {
     position: relative;
-    background-color: #252525;
+    background-color: #2C3B5A;
+    border: 10px solid #878787;
     color: #FFF;
     width: 600px;
-    margin: 0px auto;
+    margin: 30px auto;
     display: block;
     height: 450px;
 }
@@ -49,8 +53,8 @@ body {
 }
 
 .image {
-    height:90px;
-    margin-bottom: 27px;
+    height:100px;
+    padding-top: 87px;
 }
 
 .cash {
@@ -61,6 +65,18 @@ body {
     background: url("/img/card.png") no-repeat center;
 }
 
+.store {
+    background: url("/img/store.png") no-repeat center;
+}
+
+.arrows-down {
+    background: url("/img/arrows_down.png") no-repeat center;
+    height: 90px;
+    width: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 /**************************************
  Start Page
  **************************************/
@@ -68,30 +84,62 @@ body {
     height: 100%;
 }
 
-.start--left {
-    width: 62%;
+.start--column {
+    width: 33%;
     height: 100%;
+    display: inline-block;
+    float: left;
+}
+
+.start--left {
+    background-color: #2c3b5a;
+}
+
+.start--middle {
+    width: 34%;
+    background-color: #3a4f7a;
 }
 
 .start--right {
-    width: 38%;
-    background-color: #FFF;
-    color: #242424;
-    height: 100%;
+    background-color: #46629d;
+}
+
+.start--label {
+    text-align: center;
+    margin-bottom: 24px;
 }
 
 .start--subtext {
-    font-size: 13px;
+    text-transform: none;
+    font-size: 11.6px;
     font-weight: normal;
-    margin-bottom: 33px;
+    margin-bottom: 100px;
+    vertical-align: middle;
 }
 
-.start span {
-    cursor: pointer;
+.start--directions {
+    height: 90px;
+    line-height: 90px;
 }
 
-.start .button {
-    background-color: #C2C2C2;
+.start--directions-label {
+    font-size: 10px;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+.start--directions-label-right {
+    margin-left: 30px;
+}
+
+.start--button-container {
+    height: 90px;
+    padding-top: 20px;
+}
+
+.start--button-pay-inside {
+    background-color: #00aa63;
+    color: #fff; 
     font-size: 18px;
     color: #FFF;
     border: none;
@@ -99,7 +147,12 @@ body {
     height: 53px;
     font-weight: normal;
     margin: 0 auto;
-    float: none;
+    float: none;  
+    cursor: pointer;
+}
+
+.start span {
+    cursor: pointer;
 }
 
 /**************************************
@@ -170,15 +223,16 @@ body {
     height: 63px;
     line-height: 63px;
     vertical-align: middle;
-    background-color: #252525;
     font-size: 12px;
-    color: #FFF;
+    padding-left: 38px; 
+    display: inline-block;
 }
 
 .selectgrade {
     height: 100%;
     width: 100%;
-    background-color: #FFF;
+    background-color: #2c3b5a;
+    color: #fff;
     border: 1px solid #252525;
 }
 
@@ -191,16 +245,16 @@ body {
 }
 
 .selectgrade > .label {
-    color: #252525;
+    color: #fff;
 }
 
 /**************************************
  GradeButton Component
  **************************************/
 .grade {
-    background-color: #636363;
-    border: 5px solid #636363;
-    color: #FFF;
+    background-color: #c7ccd5;
+    border: 5px solid #c7ccd5;
+    color: #46629d;
     width: 140px;
     height: 140px;
     display: inline-block;
@@ -215,13 +269,13 @@ body {
 }
 
 .grade--selected {
-    border: 5px solid green;
+    border: 5px solid #fff;
 }
 
 .gradevalue {
     font-size: 60px;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
     width: 100%;
     display:block;
 }
@@ -232,6 +286,111 @@ body {
     width: 100%;
     display:block;
 }
+
+.gradeprice {
+    font-size: 15px;
+    font-weight: normal;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    vertical-align: middle;
+    display:block;
+    background-color: #46629d;
+    color: #fff;
+}
+
+.gradeprice--selected {
+    background-color: #00aa63;
+}
+
+.fuelgradeinput--cancel {
+    margin-left: 55px;
+    margin-top: 20px;
+    background-color: #c0c0c0;
+    color: #707070;
+    width: 150px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 10px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
+
+.fuelgradeinput--header {
+    display: inline-block;
+    width: 100%;
+    background-color: #46629d;
+}
+
+.fuelgradeinput--carwash {
+    height: 63px;
+    vertical-align: middle;
+}
+
+/**************************************
+ CarWashButton Component
+ **************************************/
+.carwashbutton {
+    display: inline-block;
+    float: right;
+    border: 1px solid #fff;
+    font-size: 11px;
+    width: 110px;
+    line-height: 30px;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 16px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+/**************************************
+ Banner Component
+ **************************************/
+.banner {
+    display: block;
+    background-color: #e4704f;
+    color: #fff;
+    margin: 0 auto;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 80px;
+    width: 100%;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    z-index: -1;
+}
+
+.banner--visible {
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+    z-index: 100;
+}
+
+.banner--title {
+    padding-left: 15px;
+    line-height: 80px;
+    width: 40%;
+    font-size:14px;
+}
+
+.banner--label {
+    line-height: 80px;
+    width: 55%;
+    font-size: 11px;
+    text-transform: none;
+}
+
+/**************************************
+ CarWashInput Component
+ **************************************/
+
+/**************************************
+ CarWashSelector Component
+ **************************************/
 
 /**************************************
  Alert Component
@@ -278,6 +437,20 @@ body {
     float: right;
 }
 
+.keypad--cancel {
+    width: 270px;
+    height: 57px;
+    line-height: 57px;
+    text-align: center;
+    vertical-align: middle;
+    display:inline-block;
+    float:left;
+    color: #707070;
+    background-color: #d6d6d6;
+    font-size: 14px;
+    border: 1px solid #000;
+}
+
 .row.ops {
     width: 100%;
 }
@@ -286,7 +459,7 @@ body {
     float: left;
     text-align: center;
     vertical-align: middle;
-    height: 61px;
+    height: 57px;
     width: 134px;
     border: solid 1px #252525;
     color: #252525;
@@ -301,16 +474,33 @@ body {
     float: right;
     color: #FFF;
     background-color: #636363;
-    height: 124px;
+    height: 116px;
+    line-height: 116px;
     width: 100%;
 }
 
-.op#cancel {
-    background-color:#CCCCCC;
+.op#backspace {
+    background-color:#5f5f5f;
 }
 
-.button#back {
+.button#enter {
+    background-color: #00aa63;
+}
+
+.button#cancel {
     font-size: 1em;
+}
+
+/**************************************
+ Input Display Component
+ **************************************/
+#inputdisplay {
+    width: 600px;
+}
+
+.inputdisplay--label {
+    width: 600px;
+    margin-bottom: 18fpx;
 }
 
 #digits {
@@ -327,22 +517,11 @@ body {
     padding-top: 10px;
     width: 71px;
     height: 61px;
-    border: solid 2px #FFF;
-    color: #FFF;
+    border-bottom: 2px solid #929aab;
+    color: #87dad8;
     margin: 10px;
     text-align: center;
     /* Set the base line to the top, prevents box from moving
        when text is added to the box. */
     vertical-align: top;
-}
-
-/**************************************
- Input Display Component
- **************************************/
-#inputdisplay {
-    width: 600px;
-}
-
-.inputdisplay--label {
-    width: 600px;
 }

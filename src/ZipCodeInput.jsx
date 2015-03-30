@@ -42,12 +42,12 @@ var ZipCodeInput = React.createClass({
     render: function() {
         return (
             <div className="zipcodeinput">
-                <InputDisplay prompt="Please enter zip code" size="5" input={this.state.zipCode} />
+                <InputDisplay password="false" prompt="Enter your billing zip code" size="5" input={this.state.zipCode} />
                 <Keypad onEnterClicked={this.onEnterClicked} 
                         onCancelClicked={this.onCancelClicked}
                         onBackspaceClicked={this.onBackspaceClicked}
                         onButtonClicked={this.onButtonClicked} />
-                <Alert ref="myAlert" label="Please enter 5 digit zip code" />
+                <Alert ref="myAlert" label="Please enter 5 digit billing zip code" />
             </div>
         );
     }

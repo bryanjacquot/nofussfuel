@@ -38,7 +38,7 @@ var GasPump = React.createClass({
         else {
             Step = <Start onChangeStep={this.onChangeStep}/>
         }
-        
+
         return Step;
     }  
 });

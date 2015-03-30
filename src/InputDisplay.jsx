@@ -3,7 +3,17 @@ var InputDisplay = React.createClass({
         var digits = [];
         
         for( var i = 0; i < this.props.size; i++) {
-            digits.push(<div className="digit">{this.props.input[i]}</div>);
+            if( this.props.password == "true") {
+                if( this.props.input[i] != undefined ) {
+                    digits.push(<div className="digit">*</div>);
+                }
+                else {
+                    digits.push(<div className="digit"></div>);
+                }
+            }
+            else {
+                digits.push(<div className="digit">{this.props.input[i]}</div>);
+            }
         }                    
         
         return (

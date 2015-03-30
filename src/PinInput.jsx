@@ -42,7 +42,7 @@ var PinInput = React.createClass({
     render: function() {
         return (
             <div className="pininput">
-                <InputDisplay prompt="Please enter PIN" size="4" input={this.state.pin} />
+                <InputDisplay password="true" prompt="Please enter debit card PIN" size="4" input={this.state.pin} />
                 <Keypad onEnterClicked={this.onEnterClicked} 
                         onCancelClicked={this.onCancelClicked}
                         onBackspaceClicked={this.onBackspaceClicked}
