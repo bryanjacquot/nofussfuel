@@ -1,0 +1,348 @@
+/**************************************
+ General
+ **************************************/
+body {
+    text-transform: uppercase;
+    font-size: 21.6px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    margin: 50px auto;
+    /* Prevent text selection */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#container {
+    position: relative;
+    background-color: #252525;
+    color: #FFF;
+    width: 600px;
+    margin: 0px auto;
+    display: block;
+    height: 450px;
+}
+
+.center {
+    /* Internet Explorer 10 */
+    display:-ms-flexbox;
+    -ms-flex-pack:center;
+    -ms-flex-align:center;
+
+    /* Firefox */
+    display:-moz-box;
+    -moz-box-pack:center;
+    -moz-box-align:center;
+
+    /* Safari, Opera, and Chrome */
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+
+    /* W3C */
+    display:box;
+    box-pack:center;
+    box-align:center;
+}
+
+.image {
+    height:90px;
+    margin-bottom: 27px;
+}
+
+.cash {
+    background: url("/img/cash.png") no-repeat center;
+}
+
+.credit {
+    background: url("/img/card.png") no-repeat center;
+}
+
+/**************************************
+ Start Page
+ **************************************/
+.start {
+    height: 100%;
+}
+
+.start--left {
+    width: 62%;
+    height: 100%;
+}
+
+.start--right {
+    width: 38%;
+    background-color: #FFF;
+    color: #242424;
+    height: 100%;
+}
+
+.start--subtext {
+    font-size: 13px;
+    font-weight: normal;
+    margin-bottom: 33px;
+}
+
+.start span {
+    cursor: pointer;
+}
+
+.start .button {
+    background-color: #C2C2C2;
+    font-size: 18px;
+    color: #FFF;
+    border: none;
+    width: 173px;
+    height: 53px;
+    font-weight: normal;
+    margin: 0 auto;
+    float: none;
+}
+
+/**************************************
+ Zip Code Page
+ **************************************/
+.row {
+    display: block;
+    float: left;
+    border: 0px;
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.col {
+    display: inline-block;
+    float: left;
+}
+
+.label {
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+/**************************************
+ Prepay Page
+ **************************************/
+.prepay--left {
+    width: 62%;
+    background-color: #FFF;
+    color: #242424;
+    height: 100%;
+}
+
+.prepay--right {
+    width: 38%;
+    background-color: #eaeaea;
+    color: #242424;
+    height: 100%;
+}
+
+.prepay--amount {
+    font-size: 90px;
+    font-weight: normal;
+    margin-bottom: 33px;
+}
+
+.prepay span {
+    cursor: pointer;
+}
+
+.start .button {
+    background-color: #C2C2C2;
+    font-size: 18px;
+    color: #FFF;
+    border: none;
+    width: 173px;
+    height: 53px;
+    font-weight: normal;
+    margin: 0 auto;
+    float: none;
+}
+
+/**************************************
+ Select Fuel Grade Page
+ **************************************/
+.header {
+    height: 63px;
+    line-height: 63px;
+    vertical-align: middle;
+    background-color: #252525;
+    font-size: 12px;
+    color: #FFF;
+}
+
+.selectgrade {
+    height: 100%;
+    width: 100%;
+    background-color: #FFF;
+    border: 1px solid #252525;
+}
+
+.selectgrade > .row { 
+    width: 600px;
+    text-align: center;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.selectgrade > .label {
+    color: #252525;
+}
+
+/**************************************
+ GradeButton Component
+ **************************************/
+.grade {
+    background-color: #636363;
+    border: 5px solid #636363;
+    color: #FFF;
+    width: 140px;
+    height: 140px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 2em;
+    padding-top: 10px;
+    margin: 10px;
+    text-align: center;
+    /* Set the base line to the top, prevents box from moving
+       when text is added to the box. */
+    vertical-align: top;
+}
+
+.grade--selected {
+    border: 5px solid green;
+}
+
+.gradevalue {
+    font-size: 60px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+    display:block;
+}
+
+.gradelabel {
+    font-size: 15px;
+    font-weight: normal;
+    width: 100%;
+    display:block;
+}
+
+/**************************************
+ Alert Component
+ **************************************/
+.alert {
+    display: block;
+    color: #000;
+    margin: 0 auto;
+    background-color: yellow;
+    position: absolute;
+    top: 190px;
+    left: 0px;
+    height: 80px;
+    line-height: 80px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    z-index: -1;
+}
+
+.alert--visible {
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+    z-index: 100;
+}
+
+/**************************************
+ Keypad Component
+ **************************************/
+.keypad {
+    cursor: pointer;
+    margin: 0px;
+}
+
+.keypad--digits {
+    width: 410px;
+}
+
+.keypad--ops {
+    width: 190px;
+    position: relative;
+    right: 0px;
+    float: right;
+}
+
+.row.ops {
+    width: 100%;
+}
+
+.button {
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    height: 61px;
+    width: 134px;
+    border: solid 1px #252525;
+    color: #252525;
+    cursor: pointer;
+    background-color: #FFF;
+    margin: 0px;
+    padding: 0px;
+}
+
+.op {
+    display: inline;
+    float: right;
+    color: #FFF;
+    background-color: #636363;
+    height: 124px;
+    width: 100%;
+}
+
+.op#cancel {
+    background-color:#CCCCCC;
+}
+
+.button#back {
+    font-size: 1em;
+}
+
+#digits {
+    width: 600px;
+    text-align: center;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.digit {
+    display: inline-block;
+    font-size: 2em;
+    padding-top: 10px;
+    width: 71px;
+    height: 61px;
+    border: solid 2px #FFF;
+    color: #FFF;
+    margin: 10px;
+    text-align: center;
+    /* Set the base line to the top, prevents box from moving
+       when text is added to the box. */
+    vertical-align: top;
+}
+
+/**************************************
+ Input Display Component
+ **************************************/
+#inputdisplay {
+    width: 600px;
+}
+
+.inputdisplay--label {
+    width: 600px;
+}
