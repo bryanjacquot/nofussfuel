@@ -1,0 +1,661 @@
+/**************************************
+ Colors   60.4%
+ **************************************/
+$bg-color-base: #2c3b5a;
+$bg-color-base-secondary: #3a4f7a;
+$bg-color-base-tertiary: #46629d;
+$bg-color-base-subtle: #c0c0c0;
+$bg-color-based-attention: #ca7952;
+$color-base: #fff;
+$color-accent: #8bdbda;
+$color-subtle: #707070;
+
+$border-color: #878787;
+
+$primary-button-bg: #00aa63;
+$primary-button-fg: #fff;
+
+
+
+$imagedir: '/img/';
+
+@mixin start-images($imgpath) {
+    background:  url('#{$imagedir}#{$imgpath}') no-repeat center;
+    height:122px;
+    margin-top: 55px;
+    margin-bottom: 30px;
+}
+
+/**************************************
+ General
+ **************************************/
+body {
+    text-transform: uppercase;
+    font-size: 21.6px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    margin: 0px auto;
+    background-image: url("/img/hardware.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    /* Prevent text selection */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#container {
+    position: relative;
+    background-color: $bg-color-base;
+    border: 10px solid $border-color;
+    color: $color-base;
+    width: 600px;
+    margin: 30px auto;
+    display: block;
+    height: 450px;
+}
+
+.center {
+    /* Internet Explorer 10 */
+    display:-ms-flexbox;
+    -ms-flex-pack:center;
+    -ms-flex-align:center;
+
+    /* Firefox */
+    display:-moz-box;
+    -moz-box-pack:center;
+    -moz-box-align:center;
+
+    /* Safari, Opera, and Chrome */
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+
+    /* W3C */
+    display:box;
+    box-pack:center;
+    box-align:center;
+}
+
+.cash {
+    @include start-images('cash.png'); 
+}
+
+.credit {
+    @include start-images('card.png'); 
+}
+
+.store {
+    @include start-images('store.png'); 
+}
+
+.arrows-down {
+    background: url("/img/arrows_down.png") no-repeat center;
+    height: 90px;
+    width: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+/**************************************
+ Start Page
+ **************************************/
+.start {
+    height: 100%;
+}
+
+.start--column {
+    width: 33%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+}
+
+.start--left {
+    background-color: $bg-color-base;
+}
+
+.start--middle {
+    width: 34%;
+    background-color: $bg-color-base-secondary;
+}
+
+.start--right {
+    background-color: $bg-color-base-tertiary;
+}
+
+.start--label {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.start--subtext {
+    text-transform: none;
+    font-size: 11.6px;
+    font-weight: normal;
+    margin-bottom: 95px;
+    vertical-align: middle;
+}
+
+.start--directions {
+    height: 90px;
+    line-height: 90px;
+}
+
+.start--directions-label {
+    color: $color-accent;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
+    vertical-align: middle;
+}
+
+.start--directions-label-right {
+    margin-left: 15px;
+}
+
+.start--button-container {
+    height: 90px;
+    padding-top: 120px;
+}
+
+.start--button-pay-inside {
+    background-color: $primary-button-bg;
+    color: $primary-button-fg; 
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    width: 148px;
+    height: 54px;
+    margin: 0 auto;
+    float: none;  
+    cursor: pointer;
+}
+
+.start span {
+    cursor: pointer;
+    color: #fff;
+    background-color: #000; 
+    margin: 3px;
+    padding: 2px;
+    font-size: 14px;
+}
+
+.start--input {
+    width: 100%;
+    position: relative;
+    top: 50px;
+}
+
+.start--card-buttons {
+    float: left;
+    position: relative;
+    left: -30px;
+}
+
+.start--prepay-buttons {
+    float: right;
+    position: relative;
+    right: -30px;
+}
+
+/**************************************
+ Zip Code Page
+ **************************************/
+.row {
+    display: block;
+    float: left;
+    border: 0px;
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.col {
+    display: inline-block;
+    float: left;
+}
+
+.label {
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+/**************************************
+ Prepay Page
+ **************************************/
+$prepay--banner-height: 125px;
+$prepay--amount-height: 220px;
+$prepay--actions-height: 105px;
+
+.prepay--banner {
+    width: 100%;
+    background-color: $bg-color-base-tertiary;
+    color: $color-base;
+    height: $prepay--banner-height;
+    line-height: $prepay--banner-height;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.prepay--amount {
+    width: 100%;
+    background-color: $bg-color-base;
+    color: $color-base;
+    height: $prepay--amount-height;
+    line-height: $prepay--amount-height;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: normal;
+    margin: 0px;
+}
+
+.prepay--cancel {
+    background-color: $bg-color-base-subtle;
+    color: $color-subtle;
+    width: 150px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 10px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+    position: relative;
+    top: 35px;
+    left: 48px;
+}
+
+.prepay--done {
+    background-color: $primary-button-bg;
+    color: $primary-button-fg;
+    width: 181px;
+    height: 51px;
+    line-height: 51px;
+    font-size: 12px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    float: right;
+    position: relative;
+    top: 27px;
+    right: 54px;
+}
+
+.prepay--unit {
+    display: inline-block;
+    font-size: 90.5px;
+    position: relative;
+    top: -22px;   
+}
+
+.prepay--value {
+    display: inline-block;
+    font-size: 150px;
+}
+
+.prepay--actions {
+    width: 100%;
+    height: $prepay--actions-height;
+    line-height: $prepay--actions-height;
+}
+
+.prepay--arrows {
+    float: right;
+    position: relative;
+    top: 7px;
+    left: 180px;
+}
+
+.prepay--input {
+    width: 100%;
+    position: relative;
+    top: 50px;
+}
+
+
+
+.cash-input--buttons {
+    float: right;
+    position: relative;
+    right: -30px;
+}
+
+.prepay span {
+    cursor: pointer;
+    color: #fff;
+    background-color: #000; 
+    margin: 3px;
+    padding: 2px;
+    font-size: 14px;
+}
+
+.start .button {
+    background-color: #C2C2C2;
+    font-size: 18px;
+    color: #FFF;
+    border: none;
+    width: 173px;
+    height: 53px;
+    font-weight: normal;
+    margin: 0 auto;
+    float: none;
+}
+
+/**************************************
+ Select Fuel Grade Page
+ **************************************/
+.header {
+    height: 63px;
+    line-height: 63px;
+    vertical-align: middle;
+    font-size: 12px;
+    padding-left: 38px; 
+    display: inline-block;
+}
+
+.selectgrade {
+    height: 100%;
+    width: 100%;
+    background-color: #2c3b5a;
+    color: #fff;
+    border: 1px solid #252525;
+}
+
+.selectgrade > .row { 
+    width: 600px;
+    text-align: center;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.selectgrade > .label {
+    color: #fff;
+}
+
+/**************************************
+ GradeButton Component
+ **************************************/
+.grade {
+    background-color: #c7ccd5;
+    border: 5px solid #c7ccd5;
+    color: #46629d;
+    width: 140px;
+    height: 140px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 2em;
+    padding-top: 10px;
+    margin: 10px;
+    text-align: center;
+    /* Set the base line to the top, prevents box from moving
+       when text is added to the box. */
+    vertical-align: top;
+}
+
+.grade--selected {
+    border: 5px solid #fff;
+}
+
+.gradevalue {
+    font-size: 60px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 100%;
+    display:block;
+}
+
+.gradelabel {
+    font-size: 15px;
+    font-weight: normal;
+    width: 100%;
+    display:block;
+}
+
+.gradeprice {
+    font-size: 15px;
+    font-weight: normal;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    vertical-align: middle;
+    display:block;
+    background-color: $primary-button-bg;
+    color: #fff;
+}
+
+.gradeprice--selected {
+    background-color: $bg-color-based-attention;
+}
+
+.fuelgradeinput--cancel {
+    margin-left: 55px;
+    margin-top: 20px;
+    background-color: #c0c0c0;
+    color: #707070;
+    width: 150px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 10px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
+
+.fuelgradeinput--header {
+    display: inline-block;
+    width: 100%;
+    background-color: #46629d;
+}
+
+.fuelgradeinput--carwash {
+    height: 63px;
+    vertical-align: middle;
+}
+
+/**************************************
+ CarWashButton Component
+ **************************************/
+.carwashbutton {
+    display: inline-block;
+    float: right;
+    border: 1px solid #fff;
+    font-size: 11px;
+    width: 110px;
+    line-height: 30px;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 16px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+/**************************************
+ Banner Component
+ **************************************/
+
+$banner-height: 42px;
+
+.banner {
+    display: block;
+    background-color: $bg-color-based-attention;
+    color: #fff;
+    margin: 0 auto;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: $banner-height;
+    width: 100%;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    z-index: -1;
+}
+
+.banner--visible {
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+    z-index: 100;
+}
+
+.banner--title {
+    padding-left: 15px;
+    line-height: $banner-height;
+    width: 40%;
+    font-size:14px;
+}
+
+.banner--label {
+    line-height: $banner-height;
+    width: 55%;
+    font-size: 13.6px;
+    text-transform: none;
+    font-weight: normal;
+}
+
+/**************************************
+ CarWashInput Component
+ **************************************/
+
+/**************************************
+ CarWashSelector Component
+ **************************************/
+
+/**************************************
+ Alert Component
+ **************************************/
+.alert {
+    display: block;
+    color: #000;
+    margin: 0 auto;
+    background-color: yellow;
+    position: absolute;
+    top: 190px;
+    left: 0px;
+    height: 80px;
+    line-height: 80px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    z-index: -1;
+}
+
+.alert--visible {
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+    z-index: 100;
+}
+
+/**************************************
+ Keypad Component
+ **************************************/
+.keypad {
+    cursor: pointer;
+    margin: 0px;
+}
+
+.keypad--digits {
+    width: 410px;
+}
+
+.keypad--ops {
+    width: 190px;
+    position: relative;
+    right: 0px;
+    float: right;
+}
+
+.keypad--cancel {
+    width: 270px;
+    height: 57px;
+    line-height: 57px;
+    text-align: center;
+    vertical-align: middle;
+    display:inline-block;
+    float:left;
+    color: #707070;
+    background-color: #d6d6d6;
+    font-size: 14px;
+    border: 1px solid #000;
+}
+
+.row.ops {
+    width: 100%;
+}
+
+.button {
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    height: 57px;
+    width: 134px;
+    border: solid 1px #252525;
+    color: #252525;
+    cursor: pointer;
+    background-color: #FFF;
+    margin: 0px;
+    padding: 0px;
+}
+
+.op {
+    display: inline;
+    float: right;
+    color: #FFF;
+    background-color: #636363;
+    height: 116px;
+    line-height: 116px;
+    width: 100%;
+}
+
+.op#backspace {
+    background-color:#5f5f5f;
+}
+
+.button#enter {
+    background-color: #00aa63;
+}
+
+.button#cancel {
+    font-size: 1em;
+}
+
+/**************************************
+ Input Display Component
+ **************************************/
+#inputdisplay {
+    width: 600px;
+}
+
+.inputdisplay--label {
+    width: 600px;
+    margin-bottom: 18fpx;
+}
+
+#digits {
+    width: 600px;
+    text-align: center;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.digit {
+    display: inline-block;
+    font-size: 60px;
+    font-weight: normal;
+    padding-bottom: 10px;
+    width: 71px;
+    height: 61px;
+    border-bottom: 2px solid #929aab;
+    color: #87dad8;
+    margin: 10px;
+    text-align: center;
+    /* Set the base line to the top, prevents box from moving
+       when text is added to the box. */
+    vertical-align: top;
+}

@@ -16,24 +16,8 @@ var Start = React.createClass({displayName: "Start",
         this.refs.myAlert.raise();
     },
     
-    on1Clicked: function() {
-        this.props.onChangeStep("prepay");
-    },
-    
-    on5Clicked: function() {
-        this.props.onChangeStep("prepay");
-    },
-    
-    on10Clicked: function() {
-        this.props.onChangeStep("prepay");
-    },
-    
-    on20Clicked: function() {
-        this.props.onChangeStep("prepay");
-    },
- 
-    on50Clicked: function() {
-        this.props.onChangeStep("prepay");
+    onPrePayClicked: function(value) {
+        this.props.onChangeStep("prepay", value);
     },
     
     onCreditClicked: function() {
@@ -57,12 +41,12 @@ var Start = React.createClass({displayName: "Start",
         return (
             React.createElement("div", {className: "start"}, 
                 React.createElement("div", {className: "start--column start--left"}, 
-                    React.createElement("div", {className: "credit image"}), 
+                    React.createElement("div", {className: "credit"}), 
                     React.createElement("div", {className: "start--label center"}, 
                         "Pay By Card"
                     ), 
                     React.createElement("div", {className: "start--subtext center"}, 
-                        React.createElement("span", {onClick: this.onCreditClicked}, "Credit"), " / ", React.createElement("span", {onClick: this.onDebitClicked}, "Debit"), " / ", React.createElement("span", {onClick: this.onLoyaltyClicked}, "Loyalty"), " / ", React.createElement("span", {onClick: this.onGiftcardClicked}, "Gift Card")
+                        "Credit / Debit / Loyalty / Gift Card"
                     ), 
                     React.createElement("div", {className: "start--directions"}, 
                         React.createElement("div", {className: "col arrows-down"}), 
@@ -72,12 +56,9 @@ var Start = React.createClass({displayName: "Start",
                     )
                 ), 
                 React.createElement("div", {className: "start--column start--middle"}, 
-                    React.createElement("div", {className: "store image"}), 
+                    React.createElement("div", {className: "store"}), 
                     React.createElement("div", {className: "start--label center"}, 
                         "Pay Inside"
-                    ), 
-                    React.createElement("div", {className: "start--subtext center"}, 
-                        React.createElement("span", {onClick: this.onCreditClicked}, "Credit"), " / ", React.createElement("span", {onClick: this.onDebitClicked}, "Debit"), " / ", React.createElement("span", {onClick: this.onLoyaltyClicked}, "Loyalty"), " / ", React.createElement("span", {onClick: this.onGiftcardClicked}, "Gift Card")
                     ), 
                     React.createElement("div", {className: "start--button-container"}, 
                         React.createElement("div", {className: "start--button-pay-inside center", onClick: this.onPayInsideClicked}, 
@@ -86,13 +67,13 @@ var Start = React.createClass({displayName: "Start",
                     )
                 ), 
                 React.createElement("div", {className: "start--column start--right"}, 
-                    React.createElement("div", {className: "cash image"}
+                    React.createElement("div", {className: "cash"}
                     ), 
                     React.createElement("div", {className: "start--label center"}, 
                         "Pay By Cash"
                     ), 
                     React.createElement("div", {className: "start--subtext center"}, 
-                        React.createElement("span", {onClick: this.on1Clicked}, "$1"), " / ", React.createElement("span", {onClick: this.on5Clicked}, "$5"), " / ", React.createElement("span", {onClick: this.on10Clicked}, "$10"), " / ", React.createElement("span", {onClick: this.on20Clicked}, "$20"), " / ", React.createElement("span", {onClick: this.on50Clicked}, "$50")
+                        "$1 / $5 / $10 / $20 / $50"
                     ), 
                     React.createElement("div", {className: "start--directions"}, 
                         React.createElement("div", {className: "col start--directions-label start--directions-label-right"}, 
@@ -102,7 +83,16 @@ var Start = React.createClass({displayName: "Start",
                     )
                 ), 
                 React.createElement(Alert, {ref: "myAlert", label: "Please proceed inside to pay"}), 
-                React.createElement(Banner, {ref: "myBanner", title: "Hello Loyal Customer!", label: "Your loyalty discount is $.30 per gallon"})
+                React.createElement(Banner, {ref: "myBanner", title: "Hello Loyal Customer!", label: "Your loyalty discount is $.30 per gallon"}), 
+                React.createElement("div", {className: "row start--input"}, 
+                    React.createElement("div", {className: "start--card-buttons"}, 
+                        React.createElement("span", {onClick: this.onCreditClicked}, "Credit"), 
+                        React.createElement("span", {onClick: this.onDebitClicked}, "Debit"), 
+                        React.createElement("span", {onClick: this.onLoyaltyClicked}, "Loyalty"), 
+                        React.createElement("span", {onClick: this.onGiftcardClicked}, "Gift Card")
+                    ), 
+                    React.createElement(CashInput, {onClick: this.onPrePayClicked})
+                )
             )
         );
     }

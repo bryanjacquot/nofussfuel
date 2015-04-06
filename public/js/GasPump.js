@@ -10,10 +10,11 @@ var GasPump = React.createClass({displayName: "GasPump",
         };
     },
     
-    onChangeStep: function(newStep) {
+    onChangeStep: function(newStep, newData) {
         window.location.hash = '#' + newStep;
         this.setState( {
-            step: newStep
+            step: newStep,
+            data: newData
         });
     },
     
@@ -33,7 +34,7 @@ var GasPump = React.createClass({displayName: "GasPump",
             Step = React.createElement(PinInput, {onChangeStep: this.onChangeStep})  
         }
         else if ( this.state.step == "prepay" ) {
-            Step = React.createElement(PrePay, {onChangeStep: this.onChangeStep})  
+            Step = React.createElement(PrePay, {onChangeStep: this.onChangeStep, value: this.state.data})  
         }
         else {
             Step = React.createElement(Start, {onChangeStep: this.onChangeStep})

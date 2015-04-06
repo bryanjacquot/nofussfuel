@@ -16,24 +16,8 @@ var Start = React.createClass({
         this.refs.myAlert.raise();
     },
     
-    on1Clicked: function() {
-        this.props.onChangeStep("prepay");
-    },
-    
-    on5Clicked: function() {
-        this.props.onChangeStep("prepay");
-    },
-    
-    on10Clicked: function() {
-        this.props.onChangeStep("prepay");
-    },
-    
-    on20Clicked: function() {
-        this.props.onChangeStep("prepay");
-    },
- 
-    on50Clicked: function() {
-        this.props.onChangeStep("prepay");
+    onPrePayClicked: function(value) {
+        this.props.onChangeStep("prepay", value);
     },
     
     onCreditClicked: function() {
@@ -57,12 +41,12 @@ var Start = React.createClass({
         return (
             <div className="start">
                 <div className="start--column start--left">
-                    <div className="credit image" />
+                    <div className="credit" />
                     <div className="start--label center">
                         Pay By Card
                     </div>
                     <div className="start--subtext center">
-                        <span onClick={this.onCreditClicked}>Credit</span> / <span onClick={this.onDebitClicked}>Debit</span> / <span onClick={this.onLoyaltyClicked}>Loyalty</span> / <span onClick={this.onGiftcardClicked}>Gift Card</span>
+                        Credit / Debit / Loyalty / Gift Card
                     </div>
                     <div className="start--directions">
                         <div className="col arrows-down" />
@@ -72,12 +56,9 @@ var Start = React.createClass({
                     </div>
                 </div>
                 <div className="start--column start--middle">
-                    <div className="store image" />
+                    <div className="store" />
                     <div className="start--label center">
                         Pay Inside
-                    </div>
-                    <div className="start--subtext center">
-                        <span onClick={this.onCreditClicked}>Credit</span> / <span onClick={this.onDebitClicked}>Debit</span> / <span onClick={this.onLoyaltyClicked}>Loyalty</span> / <span onClick={this.onGiftcardClicked}>Gift Card</span>
                     </div>
                     <div className="start--button-container">
                         <div className="start--button-pay-inside center" onClick={this.onPayInsideClicked}>
@@ -86,13 +67,13 @@ var Start = React.createClass({
                     </div>
                 </div>
                 <div className="start--column start--right">
-                    <div className="cash image">
+                    <div className="cash">
                     </div>
                     <div className="start--label center">
                         Pay By Cash
                     </div>
                     <div className="start--subtext center">
-                        <span onClick={this.on1Clicked}>$1</span> / <span onClick={this.on5Clicked}>$5</span> / <span onClick={this.on10Clicked}>$10</span> / <span onClick={this.on20Clicked}>$20</span> / <span onClick={this.on50Clicked}>$50</span>
+                        $1 / $5 / $10 / $20 / $50
                     </div>
                     <div className="start--directions">
                         <div className="col start--directions-label start--directions-label-right">
@@ -103,6 +84,15 @@ var Start = React.createClass({
                 </div>
                 <Alert ref="myAlert" label="Please proceed inside to pay" />
                 <Banner ref="myBanner" title="Hello Loyal Customer!" label="Your loyalty discount is $.30 per gallon" /> 
+                <div className="row start--input">
+                    <div className="start--card-buttons">
+                        <span onClick={this.onCreditClicked}>Credit</span>
+                        <span onClick={this.onDebitClicked}>Debit</span>
+                        <span onClick={this.onLoyaltyClicked}>Loyalty</span>
+                        <span onClick={this.onGiftcardClicked}>Gift Card</span>
+                    </div>
+                    <CashInput onClick={this.onPrePayClicked} />
+                </div>
             </div>
         );
     }
