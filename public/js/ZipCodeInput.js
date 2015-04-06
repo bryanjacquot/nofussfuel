@@ -12,6 +12,7 @@ var ZipCodeInput = React.createClass({displayName: "ZipCodeInput",
         }
         else {
             this.props.onChangeStep("grade");
+            this.props.onChangeStep("grade", 0, "credit");
         }
     },  
     

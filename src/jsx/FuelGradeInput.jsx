@@ -33,11 +33,23 @@ var FuelGradeInput = React.createClass({
     
     render: function() {
         var self = this;
+
+        var bannerMessage = "";
+        if( this.props.payment == "credit" ) {
+            bannerMessage = "Your credit card has been accepted";
+        }
+        else if( this.props.payment == "debit" ) {
+            bannerMessage = "Your debit card has been accepted";
+        }
+        else {
+            bannerMessage = "You have prepaid $" + this.props.amount;
+        }
+
         return (
             <div className="selectgrade">
                 <div className="fuelgradeinput--header">
                     <div className="header col">
-                        Your card has been accepted
+                        {bannerMessage}
                     </div>
                     <div className="fuelgradeinput--carwash">
                         <CarWashButton />

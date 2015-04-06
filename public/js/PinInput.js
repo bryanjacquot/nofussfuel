@@ -11,7 +11,7 @@ var PinInput = React.createClass({displayName: "PinInput",
             this.refs.myAlert.raise();
         }
         else {
-            this.props.onChangeStep("grade");
+            this.props.onChangeStep("grade", 0, "debit");
         }
     },  
     
