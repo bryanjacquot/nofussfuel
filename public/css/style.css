@@ -1,5 +1,5 @@
 /**************************************
- Colors   60.4%
+ Colors
  **************************************/
 /**************************************
  General
@@ -73,6 +73,41 @@ body {
   width: 20px;
   margin-left: 15px;
   margin-right: 15px; }
+
+.page--actions {
+  width: 100%;
+  height: 105px;
+  line-height: 105px; }
+
+.page--cancel {
+  background-color: #c0c0c0;
+  color: #707070;
+  width: 150px;
+  height: 36px;
+  line-height: 36px;
+  font-size: 10px;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  float: left;
+  position: relative;
+  top: 35px;
+  left: 48px; }
+
+.page--done {
+  background-color: #00aa63;
+  color: #fff;
+  width: 181px;
+  height: 51px;
+  line-height: 51px;
+  font-size: 12px;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  float: right;
+  position: relative;
+  top: 27px;
+  right: 54px; }
 
 /**************************************
  Start Page
@@ -202,36 +237,6 @@ body {
   font-weight: normal;
   margin: 0px; }
 
-.prepay--cancel {
-  background-color: #c0c0c0;
-  color: #707070;
-  width: 150px;
-  height: 36px;
-  line-height: 36px;
-  font-size: 10px;
-  vertical-align: middle;
-  text-align: center;
-  cursor: pointer;
-  float: left;
-  position: relative;
-  top: 35px;
-  left: 48px; }
-
-.prepay--done {
-  background-color: #00aa63;
-  color: #fff;
-  width: 181px;
-  height: 51px;
-  line-height: 51px;
-  font-size: 12px;
-  vertical-align: middle;
-  text-align: center;
-  cursor: pointer;
-  float: right;
-  position: relative;
-  top: 27px;
-  right: 54px; }
-
 .prepay--unit {
   display: inline-block;
   font-size: 90.5px;
@@ -241,11 +246,6 @@ body {
 .prepay--value {
   display: inline-block;
   font-size: 150px; }
-
-.prepay--actions {
-  width: 100%;
-  height: 105px;
-  line-height: 105px; }
 
 .prepay--arrows {
   float: right;

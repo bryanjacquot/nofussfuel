@@ -35,11 +35,11 @@ var PrePay = React.createClass({displayName: "PrePay",
                     React.createElement("div", {className: "prepay--unit"}, "$"), 
                     React.createElement("div", {className: "prepay--value"}, this.state.amount)
                 ), 
-                React.createElement("div", {className: "row prepay--actions"}, 
-                    React.createElement("div", {className: "prepay--cancel", onClick: this.onCancelClicked}, 
+                React.createElement("div", {className: "row page--actions"}, 
+                    React.createElement("div", {className: "page--cancel", onClick: this.onCancelClicked}, 
                         "Cancel Transaction"
                     ), 
-                    React.createElement("div", {className: "prepay--done", onClick: this.onDoneClicked}, 
+                    React.createElement("div", {className: "page--done", onClick: this.onDoneClicked}, 
                         "Done with Prepaid"
                     ), 
                     React.createElement("div", {className: "prepay--arrows arrows-down"})

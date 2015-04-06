@@ -1,5 +1,5 @@
 /**************************************
- Colors   60.4%
+ Colors
  **************************************/
 $bg-color-base: #2c3b5a;
 $bg-color-base-secondary: #3a4f7a;
@@ -98,6 +98,46 @@ body {
     width: 20px;
     margin-left: 15px;
     margin-right: 15px;
+}
+
+$page--actions-height: 105px;
+
+.page--actions {
+    width: 100%;
+    height: $page--actions-height;
+    line-height: $page--actions-height;
+}
+
+.page--cancel {
+    background-color: $bg-color-base-subtle;
+    color: $color-subtle;
+    width: 150px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 10px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+    position: relative;
+    top: 35px;
+    left: 48px;
+}
+
+.page--done {
+    background-color: $primary-button-bg;
+    color: $primary-button-fg;
+    width: 181px;
+    height: 51px;
+    line-height: 51px;
+    font-size: 12px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    float: right;
+    position: relative;
+    top: 27px;
+    right: 54px;
 }
 
 /**************************************
@@ -229,7 +269,6 @@ body {
  **************************************/
 $prepay--banner-height: 125px;
 $prepay--amount-height: 220px;
-$prepay--actions-height: 105px;
 
 .prepay--banner {
     width: 100%;
@@ -253,38 +292,6 @@ $prepay--actions-height: 105px;
     margin: 0px;
 }
 
-.prepay--cancel {
-    background-color: $bg-color-base-subtle;
-    color: $color-subtle;
-    width: 150px;
-    height: 36px;
-    line-height: 36px;
-    font-size: 10px;
-    vertical-align: middle;
-    text-align: center;
-    cursor: pointer;
-    float: left;
-    position: relative;
-    top: 35px;
-    left: 48px;
-}
-
-.prepay--done {
-    background-color: $primary-button-bg;
-    color: $primary-button-fg;
-    width: 181px;
-    height: 51px;
-    line-height: 51px;
-    font-size: 12px;
-    vertical-align: middle;
-    text-align: center;
-    cursor: pointer;
-    float: right;
-    position: relative;
-    top: 27px;
-    right: 54px;
-}
-
 .prepay--unit {
     display: inline-block;
     font-size: 90.5px;
@@ -295,12 +302,6 @@ $prepay--actions-height: 105px;
 .prepay--value {
     display: inline-block;
     font-size: 150px;
-}
-
-.prepay--actions {
-    width: 100%;
-    height: $prepay--actions-height;
-    line-height: $prepay--actions-height;
 }
 
 .prepay--arrows {

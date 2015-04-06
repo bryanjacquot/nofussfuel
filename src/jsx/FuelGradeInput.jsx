@@ -15,6 +15,22 @@ var FuelGradeInput = React.createClass({
     onCancelClicked: function() {
         this.props.onChangeStep("start");
     },
+
+    onDoneClicked: function() {
+        var gradeSelected = "false";
+
+        Object.keys(fuelGrades).map(function(fuelGrade) {
+            if( fuelGrades[fuelGrade].selected == "true" ) {
+                gradeSelected = "true";
+            }
+        });
+        if( gradeSelected == "true" ) {
+            this.props.onChangeStep("nowfueling");
+        }
+        else {
+            this.refs.myAlert.raise();
+        }            
+    },
     
     onGradeClicked: function(grade) {
         Object.keys(fuelGrades).map(function(fuelGrade) {
@@ -69,11 +85,15 @@ var FuelGradeInput = React.createClass({
                         )
                     })}
                 </div>
-                <div className="row">
-                    <div className="fuelgradeinput--cancel" onClick={this.onCancelClicked}>
+                <div className="row page--actions">
+                    <div className="page--cancel" onClick={this.onCancelClicked}>
                         Cancel Transaction
                     </div>
+                    <div className="page--done" onClick={this.onDoneClicked}>
+                        Lift Nozzel
+                    </div>
                 </div>
+                <Alert ref="myAlert" label="Please select a fuel grade" />
             </div>
         );
     }

@@ -35,11 +35,11 @@ var PrePay = React.createClass({
                     <div className="prepay--unit">$</div>
                     <div className="prepay--value">{this.state.amount}</div>
                 </div>
-                <div className="row prepay--actions">
-                    <div className="prepay--cancel" onClick={this.onCancelClicked}>
+                <div className="row page--actions">
+                    <div className="page--cancel" onClick={this.onCancelClicked}>
                         Cancel Transaction
                     </div>
-                    <div className="prepay--done" onClick={this.onDoneClicked}>
+                    <div className="page--done" onClick={this.onDoneClicked}>
                         Done with Prepaid
                     </div>
                     <div className="prepay--arrows arrows-down" />
