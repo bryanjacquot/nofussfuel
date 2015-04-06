@@ -34,7 +34,7 @@ var Start = React.createClass({displayName: "Start",
     },
     
     onGiftcardClicked: function() {
-        this.props.onChangeStep("giftcard");
+        this.props.onChangeStep("prepay", 50);
     },
     
     render: function() {
