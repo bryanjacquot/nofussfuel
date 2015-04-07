@@ -1,4 +1,4 @@
-var fuelGrades = [
+var FuelGrades = [
     { value: "87", label: "Regular", price: "$2.09", selected: "false" },
     { value: "89", label: "Plus", price: "$2.15", selected: "false" },
     { value: "91", label: "Supreme", price: "$2.25", selected: "false" }
@@ -11,6 +11,13 @@ var FuelGradeInput = React.createClass({
             label: "Select Grade"
         };
     },
+
+    componentWillUnmount: function() {
+        var self = this;
+        Object.keys(this.props.fuelGrades).map(function(fuelGrade) {
+            self.props.fuelGrades[fuelGrade].selected = "false";
+        });
+    },
     
     onCancelClicked: function() {
         this.props.onChangeStep("start");
@@ -18,9 +25,10 @@ var FuelGradeInput = React.createClass({
 
     onDoneClicked: function() {
         var gradeSelected = "false";
+        var self = this;
 
-        Object.keys(fuelGrades).map(function(fuelGrade) {
-            if( fuelGrades[fuelGrade].selected == "true" ) {
+        Object.keys(this.props.fuelGrades).map(function(fuelGrade) {
+            if( self.props.fuelGrades[fuelGrade].selected == "true" ) {
                 gradeSelected = "true";
             }
         });
@@ -33,12 +41,14 @@ var FuelGradeInput = React.createClass({
     },
     
     onGradeClicked: function(grade) {
-        Object.keys(fuelGrades).map(function(fuelGrade) {
-            if( fuelGrades[fuelGrade].value == grade ) {
-                fuelGrades[fuelGrade].selected = "true";
+        var self = this;
+
+        Object.keys(this.props.fuelGrades).map(function(fuelGrade) {
+            if( self.props.fuelGrades[fuelGrade].value == grade ) {
+                self.props.fuelGrades[fuelGrade].selected = "true";
             }
             else {
-                fuelGrades[fuelGrade].selected = "false";
+                self.props.fuelGrades[fuelGrade].selected = "false";
             }
         });
 
@@ -49,6 +59,7 @@ var FuelGradeInput = React.createClass({
     
     render: function() {
         var self = this;
+        this.props.fuelGrades = FuelGrades;
 
         var bannerMessage = "";
         if( this.props.payment == "credit" ) {
@@ -75,13 +86,14 @@ var FuelGradeInput = React.createClass({
                     {this.state.label}
                 </div>
                 <div className="row">
-                    {Object.keys(fuelGrades).map(function(grade) {
+                    {Object.keys(this.props.fuelGrades).map(function(grade) {
                         return (
-                            <GradeButton value={fuelGrades[grade].value} 
-                                         label={fuelGrades[grade].label}
-                                         price={fuelGrades[grade].price}
-                                         selected={fuelGrades[grade].selected} 
-                                         onClick={self.onGradeClicked} />
+                            <GradeButton value={self.props.fuelGrades[grade].value} 
+                                         label={self.props.fuelGrades[grade].label}
+                                         price={self.props.fuelGrades[grade].price}
+                                         selected={self.props.fuelGrades[grade].selected} 
+                                         onClick={self.onGradeClicked} 
+                                         key={grade} />
                         )
                     })}
                 </div>

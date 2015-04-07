@@ -23,7 +23,9 @@ var GasPump = React.createClass({
         var Step;
         
         if( this.state.step == "grade" ) {
-            Step = <FuelGradeInput onChangeStep={this.onChangeStep} payment={this.state.payment} amount={this.state.data}/>
+            Step = <FuelGradeInput onChangeStep={this.onChangeStep} 
+                                   payment={this.state.payment}
+                                   amount={this.state.data} />
         }
         else if ( this.state.step == "zip" ) {
             Step = <ZipCodeInput onChangeStep={this.onChangeStep} />                               
