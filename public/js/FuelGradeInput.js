@@ -53,7 +53,7 @@ var FuelGradeInput = React.createClass({displayName: "FuelGradeInput",
         });
 
         this.setState( {
-            label: "Lift Nozzel to Begin"
+            label: "Lift Nozzle to Begin"
         });
     },
     
@@ -102,7 +102,7 @@ var FuelGradeInput = React.createClass({displayName: "FuelGradeInput",
                         "Cancel Transaction"
                     ), 
                     React.createElement("div", {className: "page--done", onClick: this.onDoneClicked}, 
-                        "Lift Nozzel"
+                        "Lift Nozzle"
                     )
                 ), 
                 React.createElement(Alert, {ref: "myAlert", label: "Please select a fuel grade"})
