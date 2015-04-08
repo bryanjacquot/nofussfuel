@@ -23,15 +23,15 @@ var ThankYou = React.createClass({
         };
     },
 
+    componentDidMount: function() {
+        setTimeout(this.onDone, 5000);
+    },
+
     onDone: function() {
-        clearTimeout(this.timeout);
         this.props.onChangeStep("start");
     },
     
     render: function() {
-        
-        this.timeout = setTimeout(this.onDone, 5000);
-
         return (
             <div className="thankyou">
                 <div className="row thankyou--banner">
