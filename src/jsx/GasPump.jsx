@@ -93,7 +93,7 @@ var GasPump = React.createClass({
             Step = <FuelGradeInput onChangeStep={this.onChangeStep}
                                    onSelectGrade={this.onSelectGrade}
                                    onSelectWash={this.onSelectWash}
-                                   paymentMethod= {this.state.payment}
+                                   paymentMethod= {this.state.paymentMethod}
                                    discount={this.state.discountAmount}
                                    amount={this.state.prepayAmount} 
                                    fuelGrades={FuelGrades} />
