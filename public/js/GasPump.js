@@ -20,8 +20,21 @@ var GasPump = React.createClass({displayName: "GasPump",
             prepayAmount: 0,
             washType: "",
             washPrice: 0,
-            reciept: "no"
+            receipt: "no"
         };
+    },
+
+    resetPump: function() {
+        this.setState( {
+            discountAmount: 0,
+            fuelGrade: "",
+            fuelPrice: 0,
+            paymentMethod: "",
+            prepayAmount: 0,
+            washType: "",
+            washPrice: 0,
+            receipt: "no"
+        });
     },
 
     onSetDiscount: function(discount) {
@@ -30,9 +43,9 @@ var GasPump = React.createClass({displayName: "GasPump",
         })
     },
 
-    onRequestReciept: function(requestReciept) {
+    onRequestReceipt: function(requestReceipt) {
         this.setState( {
-            reciept: requestReciept
+            receipt: requestReceipt
         })
     },
 
@@ -64,6 +77,10 @@ var GasPump = React.createClass({displayName: "GasPump",
     
     onChangeStep: function(newStep) {
         window.location.hash = '#' + newStep;
+        if( newStep == "start" ) {
+            this.resetPump();
+        }
+
         this.setState( {
             step: newStep
         });
@@ -87,7 +104,7 @@ var GasPump = React.createClass({displayName: "GasPump",
         else if ( this.state.step == "nowfueling" ) {
             Step = React.createElement(NowFueling, {onChangeStep: this.onChangeStep, 
                                onSelectWash: this.onSelectWash, 
-                               onRequestReciept: this.onRequestReciept, 
+                               onRequestReceipt: this.onRequestReceipt, 
                                paymentMethod: this.state.paymentMethod, 
                                prepayAmount: this.state.prepayAmount, 
                                washType: this.state.washType, 
@@ -96,7 +113,9 @@ var GasPump = React.createClass({displayName: "GasPump",
                                grade: this.state.fuelGrade})  
         }
         else if ( this.state.step == "thankyou" ) {
-            Step = React.createElement(ThankYou, {onChangeStep: this.onChangeStep})  
+            Step = React.createElement(ThankYou, {onChangeStep: this.onChangeStep, 
+                             washType: this.state.washType, 
+                             receipt: this.state.receipt})  
         }
         else if ( this.state.step == "pin" ) {
             Step = React.createElement(PinInput, {onChangeStep: this.onChangeStep})  

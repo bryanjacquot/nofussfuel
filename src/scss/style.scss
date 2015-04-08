@@ -377,6 +377,67 @@ $prepay--amount-height: 220px;
 }
 
 /**************************************
+ Thank You Page
+ **************************************/
+.thankyou--banner {
+    width: 100%;
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 120px;
+    text-align: center;
+}
+
+.thankyou--message {
+    width: 100%;
+    font-size: 23px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.thankyou--horizontalrule {
+    width: 70%;
+    margin: 0px auto;
+    border-top: 1px #ccc solid;
+    margin-top: 70px;
+}
+
+.thankyou--emptyrule {
+    margin-top: 70px;
+}
+
+.thankyou--receipt{
+    width: 100%;
+    font-size: 12px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.thankyou--images {
+    width: 100%;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.thankyou .arrows-down {
+    margin-left: 290px;
+    display: inline-block;
+    padding-top: 18px;
+}
+
+.thankyou--logo {
+    display: inline-block;
+    float: right;
+    font-size: 116px;
+    text-transform: lowercase;
+    font-weight: bold;
+    color: #777b8a;
+    padding-right: 18px;
+    position: relative;
+    top: -10px;
+}
+
+
+/**************************************
  GradeButton Component
  **************************************/
 .grade {

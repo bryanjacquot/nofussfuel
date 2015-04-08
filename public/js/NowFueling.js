@@ -4,7 +4,7 @@ var NowFueling = React.createClass({displayName: "NowFueling",
         return {
             total: 0,
             gallons: 0,
-            printlabel: "Tap To Print Reciept"
+            printlabel: "Tap To Print receipt"
         }
     },
 
@@ -43,9 +43,9 @@ var NowFueling = React.createClass({displayName: "NowFueling",
     },
 
     onPrintReceipt: function() {
-        this.props.onRequestReciept("yes");
+        this.props.onRequestReceipt("yes");
         this.setState( {
-            printlabel: "Reciept Will Be Printed"
+            printlabel: "receipt Will Be Printed"
         });
     },
     
