@@ -75,7 +75,7 @@ var FuelGradeInput = React.createClass({displayName: "FuelGradeInput",
         if( this.props.paymentMethod == "credit" ) {
             bannerMessage = "Your credit card has been accepted";
         }
-        else if( this.props.payment == "debit" ) {
+        else if( this.props.paymentMethod == "debit" ) {
             bannerMessage = "Your debit card has been accepted";
         }
         else {
