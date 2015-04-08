@@ -310,6 +310,12 @@ body {
 .selectgrade > .label {
   color: #fff; }
 
+.selectgrade .nozzle {
+  top: -86px; }
+
+.selectgrade .nozzle.hidden {
+  display: none; }
+
 /**************************************
  Thank You Page
  **************************************/

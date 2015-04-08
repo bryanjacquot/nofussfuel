@@ -376,6 +376,14 @@ $prepay--amount-height: 220px;
     color: #fff;
 }
 
+.selectgrade .nozzle {
+    top: -86px;
+}
+
+.selectgrade .nozzle.hidden {
+    display: none;
+}
+
 /**************************************
  Thank You Page
  **************************************/

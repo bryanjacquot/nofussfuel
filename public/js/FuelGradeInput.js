@@ -10,7 +10,8 @@ var FuelGradeInput = React.createClass({displayName: "FuelGradeInput",
         });
 
         return {
-            label: "Select Grade"
+            label: "Select Grade",
+            nozzleClasses: "nozzle hidden"
         };
     },
 
@@ -60,7 +61,8 @@ var FuelGradeInput = React.createClass({displayName: "FuelGradeInput",
         });
 
         this.setState( {
-            label: "Lift Nozzle to Begin"
+            label: "Lift Nozzle to Begin",
+            nozzleClasses: "nozzle"
         });
     },
     
@@ -110,10 +112,10 @@ var FuelGradeInput = React.createClass({displayName: "FuelGradeInput",
                 React.createElement("div", {className: "row page--actions"}, 
                     React.createElement("div", {className: "page--cancel", onClick: this.onCancelClicked}, 
                         "Cancel Transaction"
-                    ), 
-                    React.createElement("div", {className: "page--done", onClick: this.onDoneClicked}, 
-                        "Lift Nozzle"
                     )
+                ), 
+                React.createElement("div", {className: this.state.nozzleClasses, onClick: this.onDoneClicked}, 
+                    "Tap to simulate lifting the nozzle"
                 ), 
                 React.createElement(Alert, {ref: "myAlert", label: "Please select a fuel grade"})
             )
