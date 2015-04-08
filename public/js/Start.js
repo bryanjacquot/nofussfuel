@@ -17,24 +17,31 @@ var Start = React.createClass({displayName: "Start",
     },
     
     onPrePayClicked: function(value) {
-        this.props.onChangeStep("prepay", value);
+        this.props.onSetPaymentMethod("prepay");
+        this.props.onSetPrepayAmount(value);
+        this.props.onChangeStep("prepay");
     },
     
     onCreditClicked: function() {
+        this.props.onSetPaymentMethod("credit");
         this.props.onChangeStep("zip");
     },
     
     onDebitClicked: function() {
+        this.props.onSetPaymentMethod("debit");
         this.props.onChangeStep("pin");
     },
     
     onLoyaltyClicked: function() {
         this.refs.myBanner.raise();
+        this.props.onSetDiscount(0.30);
         this.props.onChangeStep("loyalty");
     },
     
     onGiftcardClicked: function() {
-        this.props.onChangeStep("prepay", 50);
+        this.props.onSetPrepayAmount(50);
+        this.props.onSetPaymentMethod("prepay");
+        this.props.onChangeStep("prepay");
     },
     
     render: function() {

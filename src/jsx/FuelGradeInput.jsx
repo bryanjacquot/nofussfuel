@@ -1,12 +1,14 @@
-var FuelGrades = [
-    { value: "87", label: "Regular", price: "$2.09", selected: "false" },
-    { value: "89", label: "Plus", price: "$2.15", selected: "false" },
-    { value: "91", label: "Supreme", price: "$2.25", selected: "false" }
-];
-
 var FuelGradeInput = React.createClass({
 
     getInitialState: function() {
+        var self = this;
+        Object.keys(this.props.fuelGrades).map(function(fuelGrade) {
+            if( self.props.discount > 0 ) {
+                var newPrice = self.props.fuelGrades[fuelGrade].price - self.props.discount;
+                self.props.fuelGrades[fuelGrade].price = newPrice.toFixed(2);
+            }
+        });
+
         return {
             label: "Select Grade"
         };
@@ -26,13 +28,18 @@ var FuelGradeInput = React.createClass({
     onDoneClicked: function() {
         var gradeSelected = "false";
         var self = this;
+        var price = "";
+        var grade = ""
 
         Object.keys(this.props.fuelGrades).map(function(fuelGrade) {
             if( self.props.fuelGrades[fuelGrade].selected == "true" ) {
                 gradeSelected = "true";
+                price = self.props.fuelGrades[fuelGrade].price;
+                grade = self.props.fuelGrades[fuelGrade].value;
             }
         });
         if( gradeSelected == "true" ) {
+            this.props.onSelectGrade(grade, price);
             this.props.onChangeStep("nowfueling");
         }
         else {
@@ -59,10 +66,9 @@ var FuelGradeInput = React.createClass({
     
     render: function() {
         var self = this;
-        this.props.fuelGrades = FuelGrades;
 
         var bannerMessage = "";
-        if( this.props.payment == "credit" ) {
+        if( this.props.paymentMethod == "credit" ) {
             bannerMessage = "Your credit card has been accepted";
         }
         else if( this.props.payment == "debit" ) {

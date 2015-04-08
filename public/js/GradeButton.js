@@ -16,7 +16,7 @@ var GradeButton = React.createClass({displayName: "GradeButton",
             React.createElement("div", {className: button_classes, onClick: this.onClick}, 
                 React.createElement("div", {className: "gradelabel center"}, this.props.label), 
                 React.createElement("div", {className: "gradevalue center"}, this.props.value), 
-                React.createElement("div", {className: price_classes}, this.props.price)
+                React.createElement("div", {className: price_classes}, "$", this.props.price)
             )
         );
     }  

@@ -14,7 +14,8 @@ var PrePay = React.createClass({
     },
     
     onDoneClicked: function() {
-        this.props.onChangeStep("grade", this.state.amount, "prepay");
+        this.props.onSetPrepayAmount(this.state.amount);
+        this.props.onChangeStep("grade");
     },
     
     onCancelClicked: function() {

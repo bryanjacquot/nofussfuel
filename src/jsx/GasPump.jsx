@@ -1,3 +1,9 @@
+var FuelGrades = [
+    { value: "87", label: "Regular", price: "2.09", selected: "false" },
+    { value: "89", label: "Plus", price: "2.15", selected: "false" },
+    { value: "91", label: "Supreme", price: "2.25", selected: "false" }
+];
+
 var GasPump = React.createClass({
     
     getInitialState: function() {
@@ -6,16 +12,60 @@ var GasPump = React.createClass({
             startPage = window.location.hash.substring(1);
         }
         return {
-            step: startPage
+            step: startPage,
+            discountAmount: 0,
+            fuelGrade: "",
+            fuelPrice: 0,
+            paymentMethod: "",
+            prepayAmount: 0,
+            washType: "",
+            washPrice: 0,
+            reciept: "no"
         };
     },
+
+    onSetDiscount: function(discount) {
+        this.setState( {
+            discountAmount: discount
+        })
+    },
+
+    onRequestReciept: function(requestReciept) {
+        this.setState( {
+            reciept: requestReciept
+        })
+    },
+
+    onSelectGrade: function(grade, price) {
+        this.setState( {
+            fuelGrade: grade,
+            fuelPrice: price
+        })
+    },
+
+    onSelectWash: function(wash, price) {
+        this.setState( {
+            washType: wash,
+            washPrice: price
+        })
+    },
+
+    onSetPrepayAmount: function(amount) {
+        this.setState( {
+            prepayAmount: amount
+        })
+    },
+
+    onSetPaymentMethod: function(method) {
+        this.setState( {
+            paymentMethod: method
+        })
+    },
     
-    onChangeStep: function(newStep, newData, newPayment) {
+    onChangeStep: function(newStep) {
         window.location.hash = '#' + newStep;
         this.setState( {
-            step: newStep,
-            data: newData,
-            payment: newPayment
+            step: newStep
         });
     },
     
@@ -23,24 +73,42 @@ var GasPump = React.createClass({
         var Step;
         
         if( this.state.step == "grade" ) {
-            Step = <FuelGradeInput onChangeStep={this.onChangeStep} 
-                                   payment={this.state.payment}
-                                   amount={this.state.data} />
+            Step = <FuelGradeInput onChangeStep={this.onChangeStep}
+                                   onSelectGrade={this.onSelectGrade}
+                                   onSelectWash={this.onSelectWash}
+                                   paymentMethod= {this.state.payment}
+                                   discount={this.state.discountAmount}
+                                   amount={this.state.prepayAmount} 
+                                   fuelGrades={FuelGrades} />
         }
         else if ( this.state.step == "zip" ) {
             Step = <ZipCodeInput onChangeStep={this.onChangeStep} />                               
         }
         else if ( this.state.step == "nowfueling" ) {
-            Step = <NowFueling onChangeStep={this.onChangeStep} />  
+            Step = <NowFueling onChangeStep={this.onChangeStep} 
+                               onSelectWash={this.onSelectWash}
+                               onRequestReciept={this.onRequestReciept}
+                               paymentMethod={this.state.paymentMethod}
+                               prepayAmount={this.state.prepayAmount}
+                               price={this.state.fuelPrice} 
+                               grade={this.state.fuelGrade} />  
+        }
+        else if ( this.state.step == "thankyou" ) {
+            Step = <ThankYou onChangeStep={this.onChangeStep} />  
         }
         else if ( this.state.step == "pin" ) {
             Step = <PinInput onChangeStep={this.onChangeStep} />  
         }
         else if ( this.state.step == "prepay" ) {
-            Step = <PrePay onChangeStep={this.onChangeStep} value={this.state.data} />  
+            Step = <PrePay onChangeStep={this.onChangeStep}
+                           onSetPrepayAmount={this.onSetPrepayAmount}
+                           value={this.state.prepayAmount} />  
         }
         else {
-            Step = <Start onChangeStep={this.onChangeStep}/>
+            Step = <Start onChangeStep={this.onChangeStep} 
+                          onSetPrepayAmount={this.onSetPrepayAmount}
+                          onSetDiscount={this.onSetDiscount}
+                          onSetPaymentMethod={this.onSetPaymentMethod} />
         }
 
         return Step;
