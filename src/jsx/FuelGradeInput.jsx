@@ -64,6 +64,10 @@ var FuelGradeInput = React.createClass({
         });
     },
     
+    onCarWashSelected: function(wash, price) {
+        this.props.onSelectWash(wash, price);
+    },
+    
     render: function() {
         var self = this;
 
@@ -85,7 +89,7 @@ var FuelGradeInput = React.createClass({
                         {bannerMessage}
                     </div>
                     <div className="fuelgradeinput--carwash">
-                        <CarWashButton />
+                        <CarWash onCarWashSelected={this.onCarWashSelected}/>
                     </div>
                 </div>
                 <div className="row label center">

@@ -90,6 +90,8 @@ var GasPump = React.createClass({displayName: "GasPump",
                                onRequestReciept: this.onRequestReciept, 
                                paymentMethod: this.state.paymentMethod, 
                                prepayAmount: this.state.prepayAmount, 
+                               washType: this.state.washType, 
+                               washPrice: this.state.washPrice, 
                                price: this.state.fuelPrice, 
                                grade: this.state.fuelGrade})  
         }

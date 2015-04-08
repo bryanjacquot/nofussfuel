@@ -57,7 +57,9 @@ var NowFueling = React.createClass({displayName: "NowFueling",
                         "You selected grade ", this.props.grade, " - $", this.props.price
                     ), 
                     React.createElement("div", {className: "fuelgradeinput--carwash"}, 
-                        React.createElement(CarWashButton, null)
+                        React.createElement(CarWash, {onCarWashSelected: this.onCarWashSelected, 
+                                 washType: this.props.washType, 
+                                 washPrice: this.props.washPrice})
                     )
                 ), 
                 React.createElement("div", {className: "row nowfueling--body"}, 

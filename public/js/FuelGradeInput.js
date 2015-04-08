@@ -64,6 +64,10 @@ var FuelGradeInput = React.createClass({displayName: "FuelGradeInput",
         });
     },
     
+    onCarWashSelected: function(wash, price) {
+        this.props.onSelectWash(wash, price);
+    },
+    
     render: function() {
         var self = this;
 
@@ -85,7 +89,7 @@ var FuelGradeInput = React.createClass({displayName: "FuelGradeInput",
                         bannerMessage
                     ), 
                     React.createElement("div", {className: "fuelgradeinput--carwash"}, 
-                        React.createElement(CarWashButton, null)
+                        React.createElement(CarWash, {onCarWashSelected: this.onCarWashSelected})
                     )
                 ), 
                 React.createElement("div", {className: "row label center"}, 

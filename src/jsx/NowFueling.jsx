@@ -57,7 +57,9 @@ var NowFueling = React.createClass({
                         You selected grade {this.props.grade} - ${this.props.price}
                     </div>
                     <div className="fuelgradeinput--carwash">
-                        <CarWashButton />
+                        <CarWash onCarWashSelected={this.onCarWashSelected}
+                                 washType={this.props.washType}
+                                 washPrice={this.props.washPrice} />
                     </div>
                 </div>
                 <div className="row nowfueling--body">
