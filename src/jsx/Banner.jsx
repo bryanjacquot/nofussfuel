@@ -17,8 +17,13 @@ var Banner = React.createClass({
                 <div className="banner--title col">
                     {this.props.title}
                 </div>
-                <div className="banner--label col">
-                    {this.props.label}
+                <div className="banner--label-container col">
+                    <div className="banner--label row">
+                        {this.props.label}
+                    </div>
+                    <div className="banner--sublabel row">
+                        {this.props.sublabel}
+                    </div>
                 </div>
             </div>
         );

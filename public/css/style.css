@@ -415,7 +415,7 @@ body {
   color: #fff; }
 
 .gradeprice--selected {
-  background-color: #ca7952; }
+  background-color: #e3734d; }
 
 .fuelgradeinput--cancel {
   margin-left: 55px;
@@ -506,11 +506,15 @@ body {
   display: inline-block;
   text-align: left;
   font-size: 12px;
+  text-transform: none;
   width: 100%;
   height: 185px; }
 
 .washlabel ul {
   padding-left: 20px; }
+
+.washlabel li {
+  margin-bottom: 3px; }
 
 .washprice {
   background-color: #00aa63;
@@ -540,13 +544,13 @@ body {
  **************************************/
 .banner {
   display: block;
-  background-color: #ca7952;
+  background-color: #e3734d;
   color: #fff;
   margin: 0 auto;
   position: absolute;
   top: 0px;
   left: 0px;
-  height: 42px;
+  height: 63px;
   width: 100%;
   opacity: 0;
   transition: opacity .5s ease-in-out;
@@ -559,16 +563,29 @@ body {
 
 .banner--title {
   padding-left: 15px;
-  line-height: 42px;
+  line-height: 63px;
   width: 40%;
   font-size: 14px; }
 
+.banner--label-container {
+  width: 55%; }
+
 .banner--label {
-  line-height: 42px;
-  width: 55%;
+  line-height: 31.5px;
+  float: right;
   font-size: 13.6px;
   text-transform: none;
-  font-weight: normal; }
+  font-weight: normal;
+  text-align: right;
+  margin-top: 6px; }
+
+.banner--sublabel {
+  float: right;
+  font-size: 10.5px;
+  text-transform: none;
+  font-weight: normal;
+  text-align: right;
+  margin-bottom: 15px; }
 
 /**************************************
  CarWashInput Component

@@ -90,7 +90,10 @@ var Start = React.createClass({
                     </div>    
                 </div>
                 <Alert ref="myAlert" label="Please proceed inside to pay" />
-                <Banner ref="myBanner" title="Hello Loyal Customer!" label="Your loyalty discount is $.30 per gallon" /> 
+                <Banner ref="myBanner" 
+                        title="Hello Loyal Customer!"
+                        label="Your loyalty discount is $.30 per gallon"
+                        sublabel="Select a payment method below to proceed" /> 
                 <div className="row start--input">
                     <div className="start--card-buttons">
                         <span onClick={this.onCreditClicked}>Credit</span>
