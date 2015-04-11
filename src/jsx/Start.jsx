@@ -96,12 +96,20 @@ var Start = React.createClass({
                         sublabel="Select a payment method below to proceed" /> 
                 <div className="row start--input">
                     <div className="start--card-buttons">
-                        <span onClick={this.onCreditClicked}>Credit</span>
-                        <span onClick={this.onDebitClicked}>Debit</span>
-                        <span onClick={this.onLoyaltyClicked}>Loyalty</span>
-                        <span onClick={this.onGiftcardClicked}>Gift Card</span>
+                        <PrePayButton value="Credit" onClick={this.onCreditClicked}/>
+                        <PrePayButton value="Debit" onClick={this.onDebitClicked}/>
+                        <PrePayButton value="Loyalty" onClick={this.onLoyaltyClicked}/>
+                        <PrePayButton value="GiftCrd" onClick={this.onGiftcardClicked}/>
                     </div>
                     <CashInput onClick={this.onPrePayClicked} />
+                </div>
+                <div className="start--simulated-instructions">
+                    <div className="start--card-button-instr">
+                        &lt;&lt; Tap these buttons to <b>simulate the act</b> of inserting a card
+                    </div>
+                    <div className="start--cash-button-instr">
+                        Tap these buttons to <b>simulate the act</b> of inserting cash &gt;&gt;
+                    </div>
                 </div>
             </div>
         );

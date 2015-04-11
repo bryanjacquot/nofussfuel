@@ -48,6 +48,11 @@ var PrePay = React.createClass({
                 <div className="row prepay--input">
                     <CashInput onClick={this.onPrePayClicked} />
                 </div>
+                <div className="start--simulated-instructions">
+                    <div className="start--cash-button-instr">
+                        Tap these buttons to <b>simulate the act</b> of inserting cash &gt;&gt;
+                    </div>
+                </div>
             </div>
         );
     }

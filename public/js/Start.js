@@ -96,12 +96,20 @@ var Start = React.createClass({displayName: "Start",
                         sublabel: "Select a payment method below to proceed"}), 
                 React.createElement("div", {className: "row start--input"}, 
                     React.createElement("div", {className: "start--card-buttons"}, 
-                        React.createElement("span", {onClick: this.onCreditClicked}, "Credit"), 
-                        React.createElement("span", {onClick: this.onDebitClicked}, "Debit"), 
-                        React.createElement("span", {onClick: this.onLoyaltyClicked}, "Loyalty"), 
-                        React.createElement("span", {onClick: this.onGiftcardClicked}, "Gift Card")
+                        React.createElement(PrePayButton, {value: "Credit", onClick: this.onCreditClicked}), 
+                        React.createElement(PrePayButton, {value: "Debit", onClick: this.onDebitClicked}), 
+                        React.createElement(PrePayButton, {value: "Loyalty", onClick: this.onLoyaltyClicked}), 
+                        React.createElement(PrePayButton, {value: "GiftCrd", onClick: this.onGiftcardClicked})
                     ), 
                     React.createElement(CashInput, {onClick: this.onPrePayClicked})
+                ), 
+                React.createElement("div", {className: "start--simulated-instructions"}, 
+                    React.createElement("div", {className: "start--card-button-instr"}, 
+                        "<< Tap these buttons to ", React.createElement("b", null, "simulate the act"), " of inserting a card"
+                    ), 
+                    React.createElement("div", {className: "start--cash-button-instr"}, 
+                        "Tap these buttons to ", React.createElement("b", null, "simulate the act"), " of inserting cash >>"
+                    )
                 )
             )
         );

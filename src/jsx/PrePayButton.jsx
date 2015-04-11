@@ -5,7 +5,7 @@ var PrePayButton = React.createClass({
     
     render: function() {
         return (
-			<span onClick={this.onClick}>${this.props.value}</span>
+			<div className="circle-base prepay--button" onClick={this.onClick}>{this.props.unit}{this.props.value}</div>
         );
     }  
 });

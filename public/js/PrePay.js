@@ -47,6 +47,11 @@ var PrePay = React.createClass({displayName: "PrePay",
                 ), 
                 React.createElement("div", {className: "row prepay--input"}, 
                     React.createElement(CashInput, {onClick: this.onPrePayClicked})
+                ), 
+                React.createElement("div", {className: "start--simulated-instructions"}, 
+                    React.createElement("div", {className: "start--cash-button-instr"}, 
+                        "Tap these buttons to ", React.createElement("b", null, "simulate the act"), " of inserting cash >>"
+                    )
                 )
             )
         );

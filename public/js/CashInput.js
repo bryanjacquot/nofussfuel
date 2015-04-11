@@ -12,7 +12,7 @@ var CashInput = React.createClass({displayName: "CashInput",
             React.createElement("div", {className: "cash-input--buttons"}, 
                 Object.keys(cashDenominations).map(function(item) {
                     return (
-                        React.createElement(PrePayButton, {key: item, value: cashDenominations[item], onClick: self.onClick})
+                        React.createElement(PrePayButton, {key: item, value: cashDenominations[item], onClick: self.onClick, unit: "$"})
                     )
                 })
             )

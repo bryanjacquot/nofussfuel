@@ -5,7 +5,7 @@ var PrePayButton = React.createClass({displayName: "PrePayButton",
     
     render: function() {
         return (
-			React.createElement("span", {onClick: this.onClick}, "$", this.props.value)
+			React.createElement("div", {className: "circle-base prepay--button", onClick: this.onClick}, this.props.unit, this.props.value)
         );
     }  
 });

@@ -215,15 +215,6 @@ $page--actions-height: 105px;
     cursor: pointer;
 }
 
-.start span {
-    cursor: pointer;
-    color: #fff;
-    background-color: #000; 
-    margin: 3px;
-    padding: 2px;
-    font-size: 14px;
-}
-
 .start--input {
     width: 100%;
     position: relative;
@@ -233,13 +224,47 @@ $page--actions-height: 105px;
 .start--card-buttons {
     float: left;
     position: relative;
-    left: -30px;
+    left: -230px;
+    top: -72px;
+}
+
+.start--card-buttons .prepay--button {
+    font-size: 10px;
+    vertical-align: middle;
+    height: 46px;
 }
 
 .start--prepay-buttons {
     float: right;
     position: relative;
     right: -30px;
+}
+
+.start--simulated-instructions {
+    width: 100%;
+    position: relative;
+    top: -160px;
+    display: inline-block;
+}
+
+.start--card-button-instr {
+    font-size: 10px;
+    font-weight: normal;
+    text-transform: none;
+    color: #fff;
+    float: left;
+    position: relative;
+    left: -140px;
+}
+
+.start--cash-button-instr {
+    font-size: 10px;
+    font-weight: normal;
+    text-transform: none;
+    color: #fff;
+    float: right;
+    position: relative;
+    right: -140px;
 }
 
 /**************************************
@@ -317,19 +342,29 @@ $prepay--amount-height: 220px;
     top: 50px;
 }
 
+.circle-base {
+    border-radius: 50%;
+}
+
 .cash-input--buttons {
     float: right;
     position: relative;
-    right: -30px;
+    right: -225px;
+    top: -126px;
 }
 
-.prepay span {
+.prepay--button {
     cursor: pointer;
-    color: #fff;
-    background-color: #000; 
+    color: #444;
+    background-color: #ddd; 
     margin: 3px;
     padding: 2px;
     font-size: 14px;
+    height: 46px;
+    width: 46px;
+    line-height: 46px;
+    vertical-align: middle;
+    text-align: center;
 }
 
 .start .button {
