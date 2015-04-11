@@ -95,7 +95,7 @@ var FuelGradeInput = React.createClass({
             <div className="selectgrade">
                 <div className="fuelgradeinput--header">
                     <div className="header col">
-                        {bannerMessage}
+                        <img src="/img/check.png" className="checkmark"/>{bannerMessage}
                     </div>
                     <div className="fuelgradeinput--carwash">
                         <CarWash onCarWashSelected={this.onCarWashSelected}/>

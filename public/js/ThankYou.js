@@ -35,7 +35,7 @@ var ThankYou = React.createClass({displayName: "ThankYou",
         return (
             React.createElement("div", {className: "thankyou"}, 
                 React.createElement("div", {className: "row thankyou--banner"}, 
-                    "Your transaction has completed"
+                    React.createElement("img", {src: "/img/check.png", className: "checkmark"}), "Your transaction has completed"
                 ), 
                 React.createElement("div", {className: "row thankyou--message"}, 
                     "Thanks for choosing Vail"

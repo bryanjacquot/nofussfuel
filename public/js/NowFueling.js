@@ -54,7 +54,7 @@ var NowFueling = React.createClass({displayName: "NowFueling",
             React.createElement("div", {className: "nowfueling"}, 
                 React.createElement("div", {className: "fuelgradeinput--header"}, 
                     React.createElement("div", {className: "header col"}, 
-                        "You selected grade ", this.props.grade, " - $", this.props.price
+                        React.createElement("img", {src: "/img/check.png", className: "checkmark"}), "You selected grade ", this.props.grade, " - $", this.props.price
                     ), 
                     React.createElement("div", {className: "fuelgradeinput--carwash"}, 
                         React.createElement(CarWash, {onCarWashSelected: this.onCarWashSelected, 

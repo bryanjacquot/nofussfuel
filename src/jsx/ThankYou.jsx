@@ -35,7 +35,7 @@ var ThankYou = React.createClass({
         return (
             <div className="thankyou">
                 <div className="row thankyou--banner">
-                    Your transaction has completed
+                    <img src="/img/check.png" className="checkmark"/>Your transaction has completed
                 </div>
                 <div className="row thankyou--message">
                     Thanks for choosing Vail

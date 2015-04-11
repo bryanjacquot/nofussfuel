@@ -54,7 +54,7 @@ var NowFueling = React.createClass({
             <div className="nowfueling">
                 <div className="fuelgradeinput--header">
                     <div className="header col">
-                        You selected grade {this.props.grade} - ${this.props.price}
+                        <img src="/img/check.png" className="checkmark"/>You selected grade {this.props.grade} - ${this.props.price}
                     </div>
                     <div className="fuelgradeinput--carwash">
                         <CarWash onCarWashSelected={this.onCarWashSelected}
