@@ -5,14 +5,14 @@ var InputDisplay = React.createClass({
         for( var i = 0; i < this.props.size; i++) {
             if( this.props.password == "true") {
                 if( this.props.input[i] != undefined ) {
-                    digits.push(<div className="digit">*</div>);
+                    digits.push(<div className="digit" key={i}>*</div>);
                 }
                 else {
-                    digits.push(<div className="digit"></div>);
+                    digits.push(<div className="digit" key={i}></div>);
                 }
             }
             else {
-                digits.push(<div className="digit">{this.props.input[i]}</div>);
+                digits.push(<div className="digit" key={i}>{this.props.input[i]}</div>);
             }
         }                    
         

@@ -2,16 +2,23 @@ var FuelGradeInput = React.createClass({
 
     getInitialState: function() {
         var self = this;
+        var newLoyaltyMsgClasses = "fuelgradeinput--loyaltymessage";
+
         Object.keys(this.props.fuelGrades).map(function(fuelGrade) {
             if( self.props.discount > 0 ) {
                 var newPrice = self.props.fuelGrades[fuelGrade].price - self.props.discount;
                 self.props.fuelGrades[fuelGrade].price = newPrice.toFixed(2);
+                if( fuelGrade == "0" ) {
+                    self.props.fuelGrades[fuelGrade].selected = "true";
+                    newLoyaltyMsgClasses = "fuelgradeinput--loyaltymessage fuelgradeinput--loyaltymessage-visible";
+                }
             }
         });
 
         return {
             label: "Select Grade",
-            nozzleClasses: "nozzle hidden"
+            nozzleClasses: "nozzle hidden",
+            loyaltyMsgClasses: newLoyaltyMsgClasses
         };
     },
 
@@ -108,6 +115,9 @@ var FuelGradeInput = React.createClass({
                                          key={grade} />
                         )
                     })}
+                </div>
+                <div className={this.state.loyaltyMsgClasses}>
+                    Your last loyalty purchase
                 </div>
                 <div className="row page--actions">
                     <div className="page--cancel" onClick={this.onCancelClicked}>

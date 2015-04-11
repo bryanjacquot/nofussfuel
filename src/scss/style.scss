@@ -535,6 +535,24 @@ $prepay--amount-height: 220px;
     background-color: $bg-color-based-attention;
 }
 
+.fuelgradeinput--loyaltymessage {
+    display: none;
+    font-size: 10px;
+    text-transform: none;
+    font-style: italic;
+    font-weight: normal;
+    position: relative;
+    top: -30px;
+    margin-left: 55px;
+    text-align: center;
+    width: 150px;
+    height: 30px;
+}
+
+.fuelgradeinput--loyaltymessage-visible {
+    display: block;
+}
+
 .fuelgradeinput--cancel {
     margin-left: 55px;
     margin-top: 20px;
