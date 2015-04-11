@@ -180,7 +180,7 @@ body {
 .start--card-buttons {
   float: left;
   position: relative;
-  left: -230px;
+  left: -215px;
   top: -72px; }
 
 .start--card-buttons .prepay--button {
@@ -286,7 +286,7 @@ body {
 .cash-input--buttons {
   float: right;
   position: relative;
-  right: -225px;
+  right: -215px;
   top: -126px; }
 
 .prepay--button {
