@@ -180,8 +180,8 @@ body {
 .start--card-buttons {
   float: left;
   position: relative;
-  left: -195px;
-  top: -72px; }
+  left: -180px;
+  top: -82px; }
 
 .start--card-buttons .prepay--button {
   font-size: 10px;
@@ -206,7 +206,7 @@ body {
   color: #fff;
   float: left;
   position: relative;
-  left: -120px; }
+  left: -110px; }
 
 .start--cash-button-instr {
   font-size: 10px;
@@ -215,7 +215,7 @@ body {
   color: #fff;
   float: right;
   position: relative;
-  right: -120px; }
+  right: -110px; }
 
 /**************************************
  Zip Code Page
@@ -286,8 +286,8 @@ body {
 .cash-input--buttons {
   float: right;
   position: relative;
-  right: -195px;
-  top: -126px; }
+  right: -180px;
+  top: -136px; }
 
 .prepay--button {
   cursor: pointer;
