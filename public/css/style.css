@@ -648,11 +648,11 @@ body {
  **************************************/
 .alert {
   display: block;
-  color: #000;
+  color: #fff;
   margin: 0 auto;
-  background-color: yellow;
+  background-color: #e3734d;
   position: absolute;
-  top: 190px;
+  top: 0px;
   left: 0px;
   height: 80px;
   line-height: 80px;
@@ -830,9 +830,9 @@ body {
 
 .arrows-right {
   display: inline-block;
-  background: url("/img/arrows_right.png") no-repeat center;
-  width: 78px;
-  height: 13px;
+  background: url("/img/arrows_right.gif") no-repeat center;
+  width: 80px;
+  height: 18px;
   margin-left: 10px;
   margin-right: 10px; }
 

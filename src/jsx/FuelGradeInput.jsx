@@ -3,6 +3,17 @@ var FuelGradeInput = React.createClass({
     getInitialState: function() {
         var self = this;
         var newLoyaltyMsgClasses = "fuelgradeinput--loyaltymessage";
+        var newBannerMessage = "";
+
+        if( this.props.paymentMethod == "credit" ) {
+            newBannerMessage = "Your credit card has been accepted";
+        }
+        else if( this.props.paymentMethod == "debit" ) {
+            newBannerMessage = "Your debit card has been accepted";
+        }
+        else {
+            newBannerMessage = "You have prepaid $" + this.props.amount;
+        }
 
         Object.keys(this.props.fuelGrades).map(function(fuelGrade) {
             if( self.props.discount > 0 ) {
@@ -18,7 +29,8 @@ var FuelGradeInput = React.createClass({
         return {
             label: "Select Grade",
             nozzleClasses: "nozzle hidden",
-            loyaltyMsgClasses: newLoyaltyMsgClasses
+            loyaltyMsgClasses: newLoyaltyMsgClasses,
+            bannerMessage: newBannerMessage
         };
     },
 
@@ -57,10 +69,16 @@ var FuelGradeInput = React.createClass({
     
     onGradeClicked: function(grade) {
         var self = this;
+        var gradeValue = "";
+        var gradePrice = "";
+        var newBannerMessage = "";
 
         Object.keys(this.props.fuelGrades).map(function(fuelGrade) {
             if( self.props.fuelGrades[fuelGrade].value == grade ) {
                 self.props.fuelGrades[fuelGrade].selected = "true";
+                gradePrice = self.props.fuelGrades[fuelGrade].price;
+                gradeValue = self.props.fuelGrades[fuelGrade].value;
+                newBannerMessage = "You have selected grade " + gradeValue + " - $" + gradePrice;
             }
             else {
                 self.props.fuelGrades[fuelGrade].selected = "false";
@@ -69,7 +87,8 @@ var FuelGradeInput = React.createClass({
 
         this.setState( {
             label: "Lift Nozzle to Begin",
-            nozzleClasses: "nozzle"
+            nozzleClasses: "nozzle",
+            bannerMessage: newBannerMessage
         });
     },
     
@@ -80,22 +99,11 @@ var FuelGradeInput = React.createClass({
     render: function() {
         var self = this;
 
-        var bannerMessage = "";
-        if( this.props.paymentMethod == "credit" ) {
-            bannerMessage = "Your credit card has been accepted";
-        }
-        else if( this.props.paymentMethod == "debit" ) {
-            bannerMessage = "Your debit card has been accepted";
-        }
-        else {
-            bannerMessage = "You have prepaid $" + this.props.amount;
-        }
-
         return (
             <div className="selectgrade">
                 <div className="fuelgradeinput--header">
                     <div className="header col">
-                        <img src="/img/check.png" className="checkmark"/>{bannerMessage}
+                        <img src="/img/check.png" className="checkmark"/>{this.state.bannerMessage}
                     </div>
                     <div className="fuelgradeinput--carwash">
                         <CarWash onCarWashSelected={this.onCarWashSelected}/>
