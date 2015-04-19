@@ -4,6 +4,7 @@ var FuelGradeInput = React.createClass({
         var self = this;
         var newLoyaltyMsgClasses = "fuelgradeinput--loyaltymessage";
         var newBannerMessage = "";
+        var newNozzleClasses = "nozzle hidden";
 
         if( this.props.paymentMethod == "credit" ) {
             newBannerMessage = "Your credit card has been accepted";
@@ -19,6 +20,7 @@ var FuelGradeInput = React.createClass({
             if( self.props.discount > 0 ) {
                 var newPrice = self.props.fuelGrades[fuelGrade].price - self.props.discount;
                 self.props.fuelGrades[fuelGrade].price = newPrice.toFixed(2);
+                newNozzleClasses = "nozzle";
                 if( fuelGrade == "0" ) {
                     self.props.fuelGrades[fuelGrade].selected = "true";
                     newLoyaltyMsgClasses = "fuelgradeinput--loyaltymessage fuelgradeinput--loyaltymessage-visible";
@@ -28,7 +30,7 @@ var FuelGradeInput = React.createClass({
 
         return {
             label: "Select Grade",
-            nozzleClasses: "nozzle hidden",
+            nozzleClasses: newNozzleClasses,
             loyaltyMsgClasses: newLoyaltyMsgClasses,
             bannerMessage: newBannerMessage
         };

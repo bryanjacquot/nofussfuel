@@ -48,6 +48,10 @@ var NowFueling = React.createClass({displayName: "NowFueling",
             printlabel: "receipt Will Be Printed"
         });
     },
+
+    onCarWashSelected: function(wash, price) {
+        this.props.onSelectWash(wash, price);
+    },
     
     render: function() {        
         return (
